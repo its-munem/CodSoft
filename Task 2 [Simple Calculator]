@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int x, y, z, ans ;
+	cout << "enter two numbers" << endl;
+	cin >> x>>y;
+	cout << "What operation do you want to perform?" << endl;
+	cout << " 1.addtion \n 2.subtraction\n 3.multiplication\n 4.division" << endl;
+	cin >> z;
+	switch (z) {
+	case(1):
+		ans = x + y;
+		cout << "answer is " << ans;
+		break;
+	case(2):
+		ans = x - y;
+		cout << "answer is " << ans;
+		break;
+	case(3):
+		ans = x * y;
+		cout << "answer is " << ans;
+		break;
+	case(4):
+		ans = x / y;
+		cout << "answer is " << ans;
+		break;
+	default:
+		cout << "invalid";
+		break;
+	}
+	return 0;
+}
