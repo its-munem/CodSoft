@@ -1,0 +1,41 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+int main()
+{
+    srand(time(0)); // Seed for random number generation
+
+    int randomNumber = rand() % 100 + 1; // Generates a random number between 1 and 100
+
+    int guess;
+    int attempts = 0;
+
+    cout << "Welcome to the Guessing Game!" << endl;
+
+    do {
+        cout << "Enter your guess (between 1 and 100): ";
+        cin >> guess;
+
+        if (cin.fail()) {
+            cin.clear(); // Clear input buffer
+            cin.ignore(INT_MAX, '\n'); // Ignore invalid input
+            cout << "Invalid input. Please enter a number." << endl;
+            continue;
+        }
+
+        attempts++;
+
+        if (guess < randomNumber) {
+            cout << "Too low! Try again." << endl;
+        }
+        else if (guess > randomNumber) {
+            cout << "Too high! Try again." << endl;
+        }
+        else {
+            cout << "Congratulations! You've guessed the number in " << attempts << " attempts!" << endl;
+        }
+
+    } while (guess != randomNumber);
+
+    return 0;
+}
